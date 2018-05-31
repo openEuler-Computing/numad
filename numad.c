@@ -1997,7 +1997,7 @@ id_list_p pick_numa_nodes(int pid, int cpus, int mbs, int assume_enough_cpus) {
         int disp_percent = (100 * nonlocal_memory) / p->MBs_used;
         // If this existing process is already located where we want it, then just
         // return NULL indicating no need to change binding this time.  Check the
-        // ammount of nonlocal memory against the target_memlocality_perecent.
+        // amount of nonlocal memory against the target_memlocality_perecent.
         if ((disp_percent <= (100 - target_memlocality)) && (p->bind_time_stamp) && (EQUAL_LISTS(target_node_list_p, p->node_list_p))) {
             // Already bound to targets, and enough of the memory is located where we want it, so no need to rebind
             if (log_level >= LOG_DEBUG) {
@@ -2515,7 +2515,7 @@ int main(int argc, char *argv[]) {
     // Figure out if this is the daemon, or a subsequent invocation
     int daemon_pid = get_daemon_pid();
     if (daemon_pid > 0) {
-        // Daemon is already running.  So send dynamic options to persistant
+        // Daemon is already running.  So send dynamic options to persistent
         // thread to handle requests, get the response (if any), and finish.
         msg_t msg; 
         if (C_flag) {
