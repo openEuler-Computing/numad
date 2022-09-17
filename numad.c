@@ -1983,6 +1983,8 @@ id_list_p pick_numa_nodes(int pid, int cpus, int mbs, int assume_enough_cpus) {
         // Next line optional, since we will not look at that node again
         tmp_node[index[best_node_ix]].magnitude = combined_value_of_weighted_resources(0, mbs, cpus, tmp_node[index[best_node_ix]].MBs_free, tmp_node[index[best_node_ix]].CPUs_free);
         best_node_ix += 1;
+        if (best_node_ix >= num_nodes)
+            break;
     }
     // For existing processes, calculate the non-local memory percent to see if
     // process is already in the right place.
